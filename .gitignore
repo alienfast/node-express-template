@@ -1,3 +1,4 @@
 node_modules
 build
 template/*/node_modules
+template/package.json

@@ -7,6 +7,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@alienfast/faas": "^4.0.63"
+  },
+  "devDependencies": {
     "@alienfast/build": "^4.0.63"
   },
   "repository": {
