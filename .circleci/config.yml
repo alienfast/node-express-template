@@ -1,3 +1,4 @@
+
 jobs:
   build:
     branches:
@@ -8,11 +9,10 @@ jobs:
     steps:
     - checkout
     - add_ssh_keys
-
     - restore_cache:
         key: yarn-all-branches
     - run: yarn --pure-lockfile
-    - run: run: yarn buildGitFlowAutoReleaseStart
+    - run: yarn buildGitFlowAutoReleaseStart
     - run: ncu -a -f /@alienfast/ && yarn
     - run:
         pwd: template/node-express/function
