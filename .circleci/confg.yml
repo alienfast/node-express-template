@@ -14,10 +14,10 @@ jobs:
     - run: run: yarn buildGitFlowAutoReleaseStart
     - run: ncu -a -f /@alienfast/ && yarn
     - run:
-        pwd: template/node-express
+        pwd: template/node-express/function
         command: yarn --pure-lockfile
     - run:
-        pwd: template/node-express
+        pwd: template/node-express/function
         command: ncu -a -f /@alienfast/ && yarn
     - save_cache:
         key: yarn-all-branches-{{ epoch }}
