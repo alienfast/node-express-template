@@ -10,10 +10,10 @@
     "postbuild": "releaseFinalize && rm -rf build/typings"
   },
   "devDependencies": {
-    "@alienfast/build": "^4.0.36",
+    "@alienfast/build": "^4.0.63",
     "typescript": "^2.8.1"
   },
   "dependencies": {
-    "@alienfast/faas": "^4.0.41"
+    "@alienfast/faas": "^4.0.63"
   }
 }

@@ -1,13 +1,13 @@
 {
   "name": "node-express-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
   "dependencies": {
-    "@alienfast/build": "^4.0.44"
+    "@alienfast/build": "^4.0.63"
   },
   "repository": {
     "type": "git",
