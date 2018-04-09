@@ -18,6 +18,7 @@ RUN mkdir -p /home/app
 
 # Wrapper/boot-strapper
 WORKDIR /home/app
+RUN echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > /home/app/.npmrc
 COPY package.json ./
 
 # This ordering means the npm installation is cached for the outer function handler.
