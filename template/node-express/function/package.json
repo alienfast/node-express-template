@@ -4,9 +4,16 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rm -rf build",
+    "build:dev": "tsc",
+    "build": "tsc --project tsconfig.build.json",
+    "postbuild": "releaseFinalize && rm -rf build/typings"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "@alienfast/build": "^4.0.36",
+    "typescript": "^2.8.1"
+  },
+  "dependencies": {
+    "@alienfast/faas": "^4.0.41"
+  }
 }

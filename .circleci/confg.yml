@@ -1,0 +1,35 @@
+jobs:
+  build:
+    branches:
+      ignore:
+      - master
+    docker:
+    - image: alienfast/ci-ruby:2.0.9
+    steps:
+    - checkout
+    - add_ssh_keys
+    - restore_cache:
+        key: yarn-all-branches
+    - run: yarn --pure-lockfile
+    - run: run: yarn buildGitFlowAutoReleaseStart
+    - run: ncu -a -f /@alienfast/ && yarn
+    - run:
+        pwd: template/node-express
+        command: yarn --pure-lockfile
+    - run:
+        pwd: template/node-express
+        command: ncu -a -f /@alienfast/ && yarn
+    - save_cache:
+        key: yarn-all-branches-{{ epoch }}
+        paths:
+        - ~/.cache/yarn/v1
+    - deploy:
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "develop" ];
+            then \
+               yarn buildGitFlowAutoReleaseFinish
+          fi
+        name: Finish release and publish to npm
+    working_directory: ~/build
+version: 2
+

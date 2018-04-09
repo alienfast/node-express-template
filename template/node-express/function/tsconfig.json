@@ -1,0 +1,28 @@
+{
+  "extends": "../../../../../../js/packages/build/tsconfig.base.json",
+  "typeRoots": ["./node_modules/@types", "../../../../../../js/node_modules/@types"],
+  "compilerOptions": {
+    "outDir": "build",
+    "baseUrl": "../../../../../../js/packages",
+    "paths": {
+      "@alienfast/build/*": ["./build/src/*"],
+      "@alienfast/common-node/*": ["./common-node/src/*"],
+      "@alienfast/common/*": ["./common/src/*"],
+      "@alienfast/concepts/*": ["./concepts/src/*"],
+      "@alienfast/math/*": ["./math/src/*"],
+      "@alienfast/notifications/*": ["./notifications/src/*"],
+      "@alienfast/ui/*": ["./ui/src/*"],
+      "material-ui/*": ["../node_modules/@alienfast/material-ui/*"],
+      "@alienfast/build": ["./build/src"],
+      "@alienfast/common-node": ["./common-node/src"],
+      "@alienfast/common": ["./common/src"],
+      "@alienfast/concepts": ["./concepts/src"],
+      "@alienfast/math": ["./math/src"],
+      "@alienfast/notifications": ["./notifications/src"],
+      "@alienfast/ui": ["./ui/src"],
+      "material-ui": ["../node_modules/@alienfast/material-ui"],
+      "react-hot-loader": ["../node_modules/react-hot-loader"]
+    }
+  },
+  "include": ["../../../../../../js/typings/**/*", "./typings/**/*", "./src/**/*"]
+}

@@ -1,2 +1,2 @@
-language: node8-express
+language: node-express
 fprocess: node index.js
