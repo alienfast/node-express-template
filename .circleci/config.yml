@@ -12,7 +12,7 @@ jobs:
         key: yarn-all-branches
     - run: yarn --pure-lockfile
     - run: yarn buildGitFlowAutoReleaseStart
-    - run: cp package.json template/.
+    - run: cp package.json template/node-express/.
     - run: ncu -a -f /@alienfast/ && yarn
     - run:
         pwd: template/node-express/function
