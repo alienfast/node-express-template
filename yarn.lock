@@ -2,11 +2,11 @@
 # yarn lockfile v1
 
 
-"@alienfast/build@^4.0.44":
-  version "4.0.44"
-  resolved "https://registry.yarnpkg.com/@alienfast/build/-/build-4.0.44.tgz#4e98ddbaaf63bedfb030f077a3118015c8454004"
+"@alienfast/build@^4.0.63":
+  version "4.0.63"
+  resolved "https://registry.yarnpkg.com/@alienfast/build/-/build-4.0.63.tgz#7fce11f5f6045d922dd3d5ce5539cc21370c9382"
   dependencies:
-    "@alienfast/common-node" "^4.0.44"
+    "@alienfast/common-node" "^4.0.63"
     "@types/fs-extra" "^5.0.1"
     "@types/ip" "^0.0.30"
     "@types/jest" "^22.2.2"
@@ -63,9 +63,9 @@
     webpack-bundle-analyzer "^2.11.1"
     whatwg-fetch "^2.0.3"
 
-"@alienfast/common-node@^4.0.44":
-  version "4.0.44"
-  resolved "https://registry.yarnpkg.com/@alienfast/common-node/-/common-node-4.0.44.tgz#0b177f760647566083b7531dca707e518d87d3ef"
+"@alienfast/common-node@^4.0.63":
+  version "4.0.63"
+  resolved "https://registry.yarnpkg.com/@alienfast/common-node/-/common-node-4.0.63.tgz#b524d12959eac18f0267456857b17e319aed29b4"
   dependencies:
     "@types/del" "^3.0.1"
     "@types/findup-sync" "^0.3.29"
