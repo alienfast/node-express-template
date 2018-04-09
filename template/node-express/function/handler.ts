@@ -5,7 +5,7 @@ module.exports = (event: FunctionEvent, context: FunctionContext) => {
     const result = '<html><h2>Hi, from your typescript function!</h2></html>'
 
     context
-        .status(200)
-        .headers({ 'Content-Type': 'text/html' })
+        .setStatus(200)
+        .setHeaders({ 'Content-Type': 'text/html' })
         .succeed(result)
 }
