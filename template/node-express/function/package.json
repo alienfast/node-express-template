@@ -7,10 +7,12 @@
     "prebuild": "rm -rf build",
     "build:dev": "tsc",
     "build": "tsc --project tsconfig.build.json",
-    "postbuild": "releaseFinalize && rm -rf build/typings"
+    "postbuild": "releaseFinalize && rm -rf build/typings",
+    "start": "ts-node-dev ./src/dev.ts"
   },
   "devDependencies": {
     "@alienfast/build": "^4.0.63",
+    "ts-node-dev": "^1.0.0-pre.18",
     "typescript": "^2.8.1"
   },
   "dependencies": {
