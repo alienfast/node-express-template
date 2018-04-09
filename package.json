@@ -8,5 +8,9 @@
   "license": "MIT",
   "dependencies": {
     "@alienfast/build": "^4.0.44"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alienfast/node-express-template.git"
   }
 }
