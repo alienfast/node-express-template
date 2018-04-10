@@ -43,6 +43,8 @@ RUN npm i --production
 # COPY function files and folders
 COPY function/ ./
 
+WORKDIR ${APP}
+
 ENV cgi_headers="true"
 ENV fprocess="node index.js"
 ENV mode="http"
