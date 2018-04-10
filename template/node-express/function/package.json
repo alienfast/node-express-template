@@ -7,7 +7,7 @@
     "prebuild": "rm -rf build",
     "build:dev": "tsc",
     "build": "tsc --project tsconfig.build.json",
-    "postbuild": "releaseFinalize && rm -rf build/typings",
+    "postbuild": "releaseFinalize && rm -rf build/typings build/dev.*",
     "start": "ts-node-dev ./src/dev.ts"
   },
   "devDependencies": {
