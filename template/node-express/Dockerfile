@@ -1,25 +1,30 @@
 FROM node:9.11-alpine
 
+ENV OF_WATCHDOG_VERSION 0.2.3
 RUN addgroup -S app && adduser -S -g app app
 
 # Alternatively use ADD https:// (which will not be cached by Docker builder)
 RUN apk --no-cache add curl \
     && echo "Pulling watchdog binary from Github." \
-    && curl -sSLf https://github.com/openfaas-incubator/of-watchdog/releases/download/0.2.3/of-watchdog > /usr/bin/fwatchdog \
+    && curl -sSLf https://github.com/openfaas-incubator/of-watchdog/releases/download/${OF_WATCHDOG_VERSION}/of-watchdog > /usr/bin/fwatchdog \
     && chmod +x /usr/bin/fwatchdog \
     && apk del curl --no-cache
 
-WORKDIR /root/
+# Set correct permissions to use non root user
+# chmod for tmp is for a buildkit issue (@alexellis)
+ENV APP /home/app
+RUN mkdir -p ${APP} \
+    && chown app:app -R ${APP} \
+    && chmod 777 /tmp
 
-# Turn down the verbosity to default level.
-ENV NPM_CONFIG_LOGLEVEL warn
+USER app
 
-RUN mkdir -p /home/app
+ENV NPM_CONFIG_LOGLEVEL verbose
+ARG NPM_TOKEN
+RUN echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ${APP}/.npmrc
 
 # Wrapper/boot-strapper
-WORKDIR /home/app
-ARG NPM_TOKEN
-RUN echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > /home/app/.npmrc
+WORKDIR ${APP}
 COPY package.json ./
 
 # This ordering means the npm installation is cached for the outer function handler.
@@ -30,21 +35,13 @@ COPY index.js ./
 
 # COPY function node packages and install, adding this as a separate
 # entry allows caching of npm install
-WORKDIR /home/app/function
+RUN mkdir ${APP}/function
+WORKDIR ${APP}/function
 COPY function/*.json ./
-RUN npm i --production || :
+RUN npm i --production
 
 # COPY function files and folders
 COPY function/ ./
-
-# Set correct permissions to use non root user
-WORKDIR /home/app/
-
-# chmod for tmp is for a buildkit issue (@alexellis)
-RUN chown app:app -R /home/app \
-    && chmod 777 /tmp
-
-USER app
 
 ENV cgi_headers="true"
 ENV fprocess="node index.js"
