@@ -1,7 +1,6 @@
 FROM node:9.11-alpine
 
 ENV OF_WATCHDOG_VERSION 0.2.3
-RUN addgroup -S app && adduser -S -g app app
 
 # Alternatively use ADD https:// (which will not be cached by Docker builder)
 RUN apk --no-cache add curl \
@@ -13,7 +12,8 @@ RUN apk --no-cache add curl \
 # Set correct permissions to use non root user
 # chmod for tmp is for a buildkit issue (@alexellis)
 ENV APP /home/app
-RUN mkdir -p ${APP} \
+RUN addgroup -S app && adduser -S -g app app \
+    && mkdir -p ${APP} \
     && chown app:app -R ${APP} \
     && chmod 777 /tmp
 
