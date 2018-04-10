@@ -1,7 +1,7 @@
 import FunctionContext from '@alienfast/faas/express/FunctionContext'
 import FunctionEvent from '@alienfast/faas/express/FunctionEvent'
 
-module.exports = (event: FunctionEvent, context: FunctionContext) => {
+export default function (event: FunctionEvent, context: FunctionContext) {
     const result = `<html><h2>Hi, from your seed typescript function! ${new Date()}</h2></html>`
 
     context
