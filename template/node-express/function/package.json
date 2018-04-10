@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
+  "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rm -rf build",
     "build:dev": "tsc",
