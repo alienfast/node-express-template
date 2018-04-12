@@ -1,4 +1,5 @@
-const handler = require('./function/handler').default
-const createServer = require('@alienfast/faas/express/createServer').default
+"use strict"
 
-createServer(handler)
+// Set options as a parameter, environment variable, or rc file.
+require = require("esm")(module/*, options*/)
+module.exports = require("./main.js")
