@@ -19,7 +19,7 @@ RUN addgroup -S app && adduser -S -g app app \
 
 USER app
 
-ENV NPM_CONFIG_LOGLEVEL info
+ENV NPM_CONFIG_LOGLEVEL error
 ARG NPM_TOKEN
 RUN echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ${APP}/.npmrc
 
