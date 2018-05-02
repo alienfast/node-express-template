@@ -7,11 +7,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@alienfast/faas": "^4.0.78",
-    "esm": "^3.0.17"
+    "@alienfast/faas": "^4.0.118",
+    "esm": "^3.0.28"
   },
   "devDependencies": {
-    "@alienfast/build": "^4.0.78"
+    "@alienfast/build": "^4.0.118"
   },
   "repository": {
     "type": "git",

@@ -19,7 +19,7 @@ RUN addgroup -S app && adduser -S -g app app \
 
 USER app
 
-ENV NPM_CONFIG_LOGLEVEL verbose
+ENV NPM_CONFIG_LOGLEVEL info
 ARG NPM_TOKEN
 RUN echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > ${APP}/.npmrc
 
