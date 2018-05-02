@@ -1,17 +1,17 @@
 {
   "name": "node-express-template",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
   "dependencies": {
-    "@alienfast/faas": "^4.0.78",
-    "esm": "^3.0.17"
+    "@alienfast/faas": "^4.0.118",
+    "esm": "^3.0.28"
   },
   "devDependencies": {
-    "@alienfast/build": "^4.0.78"
+    "@alienfast/build": "^4.0.118"
   },
   "repository": {
     "type": "git",

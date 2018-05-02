@@ -12,11 +12,11 @@
     "start": "ts-node-dev ./src/dev.ts"
   },
   "devDependencies": {
-    "@alienfast/build": "^4.0.78",
+    "@alienfast/build": "^4.0.118",
     "ts-node-dev": "^1.0.0-pre.18",
     "typescript": "^2.8.1"
   },
   "dependencies": {
-    "@alienfast/faas": "^4.0.78"
+    "@alienfast/faas": "^4.0.118"
   }
 }
